@@ -15,3 +15,21 @@ Documentation for the framework can be found on the [Lumen website](http://lumen
 ### License
 
 The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
+### Running with apache
+
+After installing with apache you will get error like  
+"Sorry the page you are looking for could not be found"
+
+In this repositary you will find solution for this problem.
+
+Just clone this repositary in your apache www folder and run it.
+
+I have changed index.php inside public folder
+I have replace the line 
+
+    $app->run();
+
+with
+    $request = Illuminate\Http\Request::capture();
+    $app->run($request);
