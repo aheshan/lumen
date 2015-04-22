@@ -31,5 +31,6 @@ I have replace the line
     $app->run();
 
 with
+
     $request = Illuminate\Http\Request::capture();
     $app->run($request);
